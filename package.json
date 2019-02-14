@@ -1,0 +1,19 @@
+{
+  "name": "sitc-donate",
+  "version": "1.0.0",
+  "description": "A small app for accepting donations for Summer in the City, a Detroit nonprofit",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tristanlopus/sitc-donate.git"
+  },
+  "author": "Tristan Lopus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tristanlopus/sitc-donate/issues"
+  },
+  "homepage": "https://github.com/tristanlopus/sitc-donate#readme"
+}
