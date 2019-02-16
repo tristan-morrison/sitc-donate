@@ -13,6 +13,8 @@
 
   \Stripe\Stripe::setApiKey($stripeAPIKey_sk);
 
+  echo "hello, world!";
+
   $chargeParams = array(
     "amount" => $amount,
     "currency" => $currency,
