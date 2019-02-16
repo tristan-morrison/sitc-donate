@@ -54,6 +54,11 @@ paymentRequest.on('token', function(ev) {
     headers: {'content-type': 'application/json'},
   }).then(function (response) {
     console.log(response);
+    if (response.ok) {
+      ev.complete('success');
+    } else {
+      ev.complete('fail');
+    }
   })
 })
 
