@@ -50,7 +50,7 @@ paymentRequest.canMakePayment().then(function(result) {
 paymentRequest.on('token', function(ev) {
   fetch('./../server/submitChargeToStripe.php', {
     method: 'POST',
-    body: JSON.stringify({token: ev.token.id}),
+    body: JSON.stringify({source: ev.token.id}),
     headers: {'content-type': 'application/json'},
   }).then(function (response) {
     console.log(response);
