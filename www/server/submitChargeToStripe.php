@@ -14,6 +14,7 @@
   \Stripe\Stripe::setApiKey($stripeAPIKey_sk);
 
   echo "hello, world!";
+  http_response_code(500);
 
   $chargeParams = array(
     "amount" => $amount,
@@ -55,6 +56,7 @@
   }
 
   if (isset($charge)) {
+    http_response_code(200);
     echo $charge;
   }
 
