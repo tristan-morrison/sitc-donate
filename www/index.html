@@ -42,29 +42,85 @@
   <div class="container">
     <div class="section">
 
-      <!--   Icon Section   -->
+
       <form class="col s12">
-        <div class="row">
-          <div class="input-field col s6">
+        <!-- Name -->
+        <div id="donorInfo" class="row">
+          <div class="col s12 offset-m1">
+            <h6>Donor Information</h6>
+          </div>
+
+          <div class="input-field col s9 m4 offset-m1">
             <input  id="first_name" type="text" />
             <label for="first_name">First Name</label>
+          </div>
+          <div class="input-field col s9 m4 offset-m1">
+            <input  id="last_name" type="text" />
+            <label for="last_name">Last Name</label>
+          </div>
+
+          <!-- Email -->
+          <div class="input-field col s9 m5 offset-m1">
+            <input  id="email" type="email" />
+            <label for="email">Email</label>
+          </div>
+
+          <!-- Phone -->
+          <div class="input-field col s6 m3 offset-m1">
+            <input  id="phone" type="tel" />
+            <label for="phone">Phone</label>
           </div>
         </div>
 
         <div class="row">
-          <div class="col s6">
+          <div class="col offset-m1">
+            <label>
+              <input id="showTributeInfo" type="checkbox" onchange="toggleTributeInfo()" />
+              <span>Donate in honor of someone</span>
+            </label>
+          </div>
+        </div>
+
+        <div id="tributeInfo" class="row">
+          <div class="col s12 offset-m1">
+            <h6>In Honor Of</h6>
+          </div>
+
+          <div class="input-field col s9 m4 offset-m1">
+            <input  id="tribute_first_name" type="text" />
+            <label for="tribute_first_name">First Name</label>
+          </div>
+          <div class="input-field col s9 m4 offset-m1">
+            <input  id="tribute_last_name" type="text" />
+            <label for="tribute_last_name">Last Name</label>
+          </div>
+
+          <!-- Email -->
+          <div class="input-field col s9 m5 offset-m1">
+            <input  id="tribute_email" type="email" />
+            <label for="tribute_email">Email</label>
+          </div>
+
+          <!-- Phone -->
+          <div class="input-field col s6 m3 offset-m1">
+            <input  id="tribute_phone" type="tel" />
+            <label for="tribute_phone">Phone</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s6 offset-m1">
             <span for="card_element">
               Payment Request
             </span>
             <div id="paymentRequestButtonContainer">
               <!-- Stripe Elements inserts card element here -->
             </div>
-            <div id="card-errors" role="alert"></div>
           </div>
         </div>
 
         <div class="row">
-          <div class="col s6">
+          <div class="col s12 m6 offset-m1">
             <label for="card_element">
               Credit or debit card
             </label>

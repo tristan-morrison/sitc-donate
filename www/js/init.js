@@ -46,3 +46,23 @@ paymentRequest.canMakePayment().then(function(result) {
     document.getElementById('paymentRequestButtonContainer').style.display = 'none';
   }
 });
+
+paymentRequest.on('token', function(ev) {
+  fetch('./../server/submitChargeToStripe.php', {
+    method: 'POST',
+    body: JSON.stringify({token: ev.token.id}),
+    headers: {'content-type': 'application/json'},
+  }).then(function (response) {
+    console.log(response);
+  })
+})
+
+function toggleTributeInfo () {
+  if (event.target.checked) {
+    console.log(event.target.checked);
+    document.getElementById('tributeInfo').style.display = 'block';
+  } else {
+    console.log(event.target.checkd);
+    document.getElementById('tributeInfo').style.display = 'none';
+  }
+}
