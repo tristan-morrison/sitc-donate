@@ -4,6 +4,10 @@
   require_once 'stripe_api_key.php';
   require_once __DIR__ . '/stripe-php/init.php';
 
+  ini_set("log_errors", 1);
+  ini_set("error_log", "/logs/php-error.log");
+  error_log( "Hello, errors!" );
+
   $amount = isset($_GET["amount"]) ? sanitize($_GET["amount"]) : "";
   $currency = isset($_GET["currency"]) ? sanitize($_GET["currency"]) : "";
   $description = isset($_GET["description"]) ? sanitize($_GET["description"]) : "";
