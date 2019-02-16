@@ -5,20 +5,20 @@
   require_once __DIR__ . '/stripe-php/init.php';
 
   ini_set("log_errors", 1);
-  ini_set("error_log", "/logs/php-error.log");
+  ini_set("error_log", __DIR__ . "/logs/php-error.log");
   error_log( "Hello, errors!" );
 
-  $amount = isset($_GET["amount"]) ? sanitize($_GET["amount"]) : "";
-  $currency = isset($_GET["currency"]) ? sanitize($_GET["currency"]) : "";
-  $description = isset($_GET["description"]) ? sanitize($_GET["description"]) : "";
-  $shipping = isset($_GET["shipping"]) ? sanitize($_GET["shipping"]) : "";
-  $source = isset($_GET["source"]) ? sanitize($_GET["source"]) : "";
-  $statement_descriptor = isset($_GET["statement_descriptor"]) ? sanitize($_GET["statement_descriptor"]) : "Summer in the City";
+  $inputJSON = file_get_contents('php://input');
+  $input = json_decode($inputJSON, TRUE);
+
+  $amount = isset($input["amount"]) ? sanitize($input["amount"]) : "";
+  $currency = isset($input["currency"]) ? sanitize($input["currency"]) : "";
+  $description = isset($input["description"]) ? sanitize($input["description"]) : "";
+  $shipping = isset($input["shipping"]) ? sanitize($input["shipping"]) : "";
+  $source = isset($input["source"]) ? sanitize($input["source"]) : "";
+  $statement_descriptor = isset($input["statement_descriptor"]) ? sanitize($input["statement_descriptor"]) : "Summer in the City";
 
   \Stripe\Stripe::setApiKey($stripeAPIKey_sk);
-
-  echo "hello, world!";
-  http_response_code(500);
 
   $chargeParams = array(
     "amount" => $amount,
@@ -40,6 +40,10 @@
     // echo 'Error code: ' . $err['code'] . "\n";
     // echo 'Error message: ' . $err['message'] . "\n";
   } catch (\Stripe\Error\InvalidRequest $e) {
+
+    // echo "Invalid request!";
+    // echo $e->getHttpStatus();
+
     $response = $e->getJsonBody();
     $err = $response['error'];
 
@@ -61,7 +65,7 @@
 
   if (isset($charge)) {
     http_response_code(200);
-    echo $charge;
+    echo json_encode($charge);
   }
 
 ?>

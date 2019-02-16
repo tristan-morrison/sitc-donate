@@ -26,8 +26,8 @@ var paymentRequest = stripe.paymentRequest({
   country: 'US',
   currency: 'usd',
   total: {
-    label: 'Demo total',
-    amount: 1000,
+    amount: 10000,
+    label: "Donation",
   },
   requestPayerName: true,
   requestPayerEmail: true,
@@ -47,17 +47,46 @@ paymentRequest.canMakePayment().then(function(result) {
   }
 });
 
+prButton.on('click', function(ev) {
+  ev.preventDefault();
+
+  var amount = (parseInt(document.getElementById('amount').value) * 100) || 10000;
+  console.log(amount);
+
+  paymentRequest.update({
+    total: {
+      amount: amount,
+      label: "Donation"
+    }
+  })
+
+  paymentRequest.show();
+})
+
 paymentRequest.on('token', function(ev) {
+  var amount = (parseInt(document.getElementById('amount').value) * 100) || 10000;
+  var name = document.getElementById('first_name').value + " " + document.getElementById('last_name').value;
+  console.log("name: " + name);
+  var description = "Donation from " + name;
+  var statement_descriptor = "Summer in the City";
+
   fetch('./../server/submitChargeToStripe.php', {
     method: 'POST',
-    body: JSON.stringify({source: ev.token.id}),
+    body: JSON.stringify({
+      amount: amount,
+      currency: 'usd',
+      source: ev.token.id,
+      description: description,
+      statement_descriptor: statement_descriptor,
+    }),
     headers: {'content-type': 'application/json'},
   }).then(function (response) {
-    console.log(response);
     if (response.ok) {
+      var responseObj = response.json();
+      console.log(responseObj);
       ev.complete('success');
     } else {
-      ev.complete('fail');
+      ev.complete('fail')
     }
   })
 })
