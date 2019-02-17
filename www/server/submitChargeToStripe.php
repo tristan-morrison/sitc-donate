@@ -4,10 +4,6 @@
   require_once 'stripe_api_key.php';
   require_once __DIR__ . '/stripe-php/init.php';
 
-  ini_set("log_errors", 1);
-  ini_set("error_log", __DIR__ . "/logs/php-error.log");
-  error_log( "Hello, errors!" );
-
   $inputJSON = file_get_contents('php://input');
   $input = json_decode($inputJSON, TRUE);
 
