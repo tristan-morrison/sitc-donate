@@ -1,5 +1,8 @@
-FROM httpd:2.4
+FROM php:7.2-apache
 
-COPY ./dockerconfig/httpd.conf /usr/local/apache2/conf/httpd.conf
-COPY ./dockerconfig/domain.key /usr/local/apache2/conf/server.key
-COPY ./dockerconfig/domain.crt /usr/local/apache2/conf/server.crt
+RUN a2enmod ssl
+RUN a2ensite default-ssl
+
+#COPY ./dockerconfig/httpd.conf /usr/local/apache2/apache2.conf
+COPY ./dockerconfig/domain.key /etc/ssl/private/ssl-cert-snakeoil.key
+COPY ./dockerconfig/domain.crt /etc/ssl/certs/ssl-cert-snakeoil.pem
