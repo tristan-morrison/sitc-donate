@@ -44,6 +44,7 @@ paymentRequest.canMakePayment().then(function(result) {
     prButton.mount('#paymentRequestButtonContainer');
   } else {
     document.getElementById('paymentRequestButtonContainer').style.display = 'none';
+    document.getElementById('orContainer').style.display = 'none';
   }
 });
 
@@ -64,11 +65,14 @@ prButton.on('click', function(ev) {
 })
 
 paymentRequest.on('token', function(ev) {
+
   var amount = (parseFloat(document.getElementById('amount').value) * 100) || 10000;
   var name = document.getElementById('first_name').value + " " + document.getElementById('last_name').value;
   console.log("name: " + name);
   var description = "Donation from " + name;
   var statement_descriptor = "Summer in the City";
+
+  tokenId = ev.token.id;
 
   fetch('./../server/submitChargeToStripe.php', {
     method: 'POST',
@@ -82,9 +86,24 @@ paymentRequest.on('token', function(ev) {
     headers: {'content-type': 'application/json'},
   }).then(function (response) {
     if (response.ok) {
-      var responseObj = response.json();
-      console.log(responseObj);
-      ev.complete('success');
+      response.json().then(function (jsonContent) {
+        var chargeId = jsonContent.id;
+        ev.complete('success');
+        submitDonationToAirtable(tokenId).then(function (response) {
+          if (response.ok) {
+            response.json().then(function (contentJson) {
+              console.log(contentJson);
+              captureStripeCharge(chargeId).then(function (response) {
+                if (response.ok) {
+                  response.json().then(function (jsonContent) {
+                    console.log(jsonContent);
+                  })
+                }
+              })
+            })
+          }
+        })
+      })
     } else {
       ev.complete('fail')
     }
@@ -100,10 +119,26 @@ paymentForm.addEventListener('submit', function(event) {
       var errorElement = document.getElementById('card-errors');
       errorElement.textContent = result.error.message;
     } else {
+      var tokenId = result.token.id;
       stripeTokenHandler(result.token).then(function(response) {
         if (response.ok) {
           response.json().then(function (responseObj) {
-            console.log(responseObj);
+            var chargeId = responseObj.id;
+            console.log("ChargeID: " + chargeId);
+            submitDonationToAirtable(tokenId).then(function (response) {
+              if (response.ok) {
+                response.json().then(function (contentJson) {
+                  console.log(contentJson);
+                  captureStripeCharge(chargeId).then(function (response) {
+                    if (response.ok) {
+                      response.text().then(function (contentJson) {
+                        console.log(contentJson);
+                      })
+                    }
+                  })
+                })
+              }
+            })
           })
         } else {
           console.log('Charge error!');
@@ -131,6 +166,35 @@ function stripeTokenHandler (token) {
     }),
     headers: {'content-type': 'application/json'},
   });
+}
+
+function submitDonationToAirtable (tokenId) {
+  var donationInfo = {
+    firstName: document.getElementById('first_name').value,
+    lastName: document.getElementById('last_name').value,
+    email: document.getElementById('email').value,
+    phone: document.getElementById('phone').value,
+    tributeFirstName: document.getElementById('tribute_first_name').value,
+    tributeLastName: document.getElementById('tribute_last_name').value,
+    tributeEmail: document.getElementById('tribute_email').value,
+    tributePhone: document.getElementById('tribute_phone').value,
+    amountPaid: parseInt(document.getElementById('amount')),
+    paymentToken: tokenId
+  }
+
+  return fetch('./../server/submitDonationToAirtable.php', {
+    method: 'POST',
+    body: JSON.stringify({info: donationInfo}),
+    headers: {'content-type': 'application/json'}
+  });
+}
+
+function captureStripeCharge (chargeId) {
+  return fetch('./../server/captureStripeCharge.php', {
+    method: 'POST',
+    body: JSON.stringify({chargeId: chargeId}),
+    headers: {'content-type': 'application/json'}
+  })
 }
 
 function toggleTributeInfo () {
