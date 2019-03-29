@@ -6,7 +6,7 @@
 //This should be done in your php.ini, but this is how to do it if you don't have access to that
 date_default_timezone_set('Etc/UTC');
 require_once 'emailAddrs.php';
-require_once 'emailText.php';
+require_once 'tributeEmailText.php';
 require_once 'phpmailer/src/PHPMailer.php';
 require 'phpmailer/src/SMTP.php';
 
@@ -14,7 +14,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 //Create a new PHPMailer instance
 $mail = new PHPMailer;
-$amount = (isset($_GET['amount'])) ? $_GET['amount'] : null;
 $address = (isset($_GET['address'])) ? $_GET['address'] : null;
 // format data
 ucwords($firstName);
@@ -54,9 +53,8 @@ foreach ($directorEmails as $sendToEmail => $sendToName) {
 }
 // $mail->addAddress('ben@summerinthecity.com', 'Ben');
 //Set the subject line
-$mail->Subject = "Receipt: Thanks for your donation";
-$emailString = str_replace("[AMOUNT]", $amount, $emailText);
-$message = $emailString;
+$mail->Subject = "A donation in your honor";
+$message = $emailText;
 $mail->msgHTML($message);
 //send the message, check for errors
 if (!$mail->send()) {
