@@ -1,6 +1,7 @@
 <?php
-  $emailText = <<<EOT
-{<!DOCTYPE html>
+
+$emailText = <<<EOF
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -11,7 +12,7 @@
 <!--[if IEMobile]><html class="ie8plus" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
 <meta name="format-detection" content="telephone=no">
 <meta name="generator" content="EDMdesigner, www.edmdesigner.com">
-<title>Untitled 28 Mar 2019 14:59:05 GMT</title>
+<title>Tribute Email</title>
 
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
 
@@ -171,7 +172,7 @@ html, body {background-image: none !important; background-color: transparent !im
 <!-- content -->
 <div  style="padding:0px"><table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff"  style="background-color:#ffffff"><tr><td valign="top"  style="padding:0px"><table cellpadding="0" cellspacing="0" width="600" align="center"  style="max-width:600px;min-width:240px;margin:0 auto" class="email-root-wrapper"><tr><td valign="top"  style="padding:0px"><table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#F0EAD6"  style="border:0px none;background-color:#F0EAD6"><tr><td valign="top"  style="padding:0px"><table cellpadding="0" cellspacing="0" width="100%"><tr><td  style="padding:0px" class="pattern"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td valign="top" width="600"  style="padding:0px" class="c600p100n"><table
 cellpadding="0" cellspacing="0" width="100%"><tr><td align="center"  style="padding:0px"><table cellpadding="0" cellspacing="0" border="0" align="center" width="138" height="100"  style="border:0px none;height:auto"><tr><td valign="top"  style="padding:0px"><img
-src="https://donate.summerinthecity.com/assets/sitcLogo_small.png" width="138" height="100" alt="" border="0"  style="display:block" class="img138x100"  /></td>
+src="https://images.chamaileon.io/5c9ce0c65b0b3400da9509e5/sitcLogo_small_2019-03-28P15.33.00.818.png" width="138" height="100" alt="" border="0"  style="display:block" class="img138x100"  /></td>
 </tr>
 </table>
 </td>
@@ -194,13 +195,13 @@ src="https://donate.summerinthecity.com/assets/sitcLogo_small.png" width="138" h
 </table>
 <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff"  style="background-color:#ffffff"><tr><td valign="top"  style="padding:0px"><table cellpadding="0" cellspacing="0" width="600" align="center"  style="max-width:600px;min-width:240px;margin:0 auto" class="email-root-wrapper"><tr><td valign="top"  style="padding:0px"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td valign="top"  style="padding-bottom:30px"><table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#95DEE3"  style="border:0px none;background-color:#95DEE3"><tr><td valign="top"  style="padding:5px"><table cellpadding="0" cellspacing="0" width="100%"><tr><td  style="padding:0px"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td valign="top"
 style="padding:10px"><table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#FFFFFF"  style="border:0px none;background-color:#FFFFFF"><tr><td valign="top"  style="padding:10px"><table cellpadding="0" cellspacing="0" width="100%"><tr><td  style="padding:0px" class="pattern"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td valign="top"  style="padding:10px"><div  style="text-align:left;font-family:Verdana, Geneva, sans-serif;font-size:15px;color:#000000;line-height:22px;mso-line-height:exactly;mso-text-raise:3px"><h1
-style="font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 48px; color: #C0AB8E; line-height: 60px; mso-line-height: exactly; mso-text-raise: 6px; padding: 0; margin: 0;text-align: center;"><span class="mso-font-fix-tahoma"><strong>THANK YOU</strong></span></h1><p style="padding: 0; margin: 0;">&nbsp;</p><h2 style="font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 30px; color: #CFB095; line-height: 42px; mso-line-height: exactly; mso-text-raise: 6px; padding: 0; margin: 0;text-align: center;"><span class="mso-font-fix-tahoma"><b>for your donation to Summer in the City</b></span></h2><p style="padding: 0; margin: 0;">&nbsp;</p><p
-style="padding: 0; margin: 0;text-align: center;">Your donation helps make Summer in the City more fun, flexible, and fulfilling than ever. While our volunteers power our programming, we couldn't do it without the small stuff &#8212 like t-shirts, Chewy bars, and name &#8212 or some big stuff &#8212 like our Headquarters and Project Paint vans. Your donation will help us maintain steady streams of the small things and dream of even bigger big stuff.</p><p style="padding: 0; margin: 0;text-align: center;">&nbsp;</p><p style="padding: 0; margin: 0;text-align: center;">The amount of your tax-deductible donation is:</p><p style="padding: 0; margin: 0;text-align: center;">&#36;[AMOUNT]</p><p style="padding: 0; margin: 0;text-align: center;">&nbsp;</p><h3
-style="font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 20px; color: #0000000; line-height: 30px; mso-line-height: exactly; mso-text-raise: 5px; padding: 0; margin: 0;text-align: center;"><span class="mso-font-fix-tahoma"><b>Here are approximately 6,000 words about how grateful we are:</b></span></h3></div></td>
+style="font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 48px; color: #C0AB8E; line-height: 60px; mso-line-height: exactly; mso-text-raise: 6px; padding: 0; margin: 0;text-align: center;"><span class="mso-font-fix-tahoma"><strong>THANK YOU</strong></span></h1><p style="padding: 0; margin: 0;">&nbsp;</p><h2 style="font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 30px; color: #CFB095; line-height: 42px; mso-line-height: exactly; mso-text-raise: 6px; padding: 0; margin: 0;text-align: center;"><span class="mso-font-fix-tahoma"><b>Someone donated to Summer in the City in your honor.</b></span></h2><p style="padding: 0; margin: 0;">&nbsp;</p><p
+style="padding: 0; margin: 0;text-align: center;">Your donation helps make Summer in the City more fun, flexible, and fulfilling than ever. While our volunteers power our programming, we couldn't do it without the small stuff — like t-shirts, Chewy bars, and name — or some big stuff — like our Headquarters and Project Paint vans. Your donation will help us maintain steady streams of the small things and dream of even bigger big stuff.</p><p style="padding: 0; margin: 0;text-align: center;">&nbsp;</p><h3 style="font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 20px; color: #0000000; line-height: 30px; mso-line-height: exactly; mso-text-raise: 5px; padding: 0; margin: 0;text-align: center;"><span
+class="mso-font-fix-tahoma"><b>Here are approximately 6,000 words about how grateful we are:</b></span></h3></div></td>
 </tr>
 </table>
 <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td valign="top"  style="padding:0;mso-cellspacing:0in"><table cellpadding="0" cellspacing="0" border="0" align="left" width="183" id="c183p33r"  style="float:left" class="c183p33r"><tr><td valign="top"  style="padding:0px"><table cellpadding="0" cellspacing="0" width="100%"><tr><td align="center"  style="padding:0px"><table cellpadding="0" cellspacing="0" border="0" align="center" class="full-width"><tr><td valign="top" align="center"  style="padding:10px"><table cellpadding="0" cellspacing="0" border="0" width="163" height="163"  style="border:0px none;height:auto" class="full-width"><tr><td valign="top"  style="padding:0px"><img
-src="https://donate.summerinthecity.com/assets/emailPic1.jpg" width="163" height="163" alt="" border="0"  style="display:block;width:100%;height:auto" class="full-width img163x163"  /></td>
+src="https://images.chamaileon.io/5c9ce0c65b0b3400da9509e5/29478943487_f0b81a26fc_z_2019-03-28P15.13.28.682.jpg" width="163" height="163" alt="" border="0"  style="display:block;width:100%;height:auto" class="full-width img163x163"  /></td>
 </tr>
 </table>
 </td>
@@ -214,7 +215,7 @@ src="https://donate.summerinthecity.com/assets/emailPic1.jpg" width="163" height
 </table>
 <!--[if gte mso 9]></td><td valign="top" style="padding:0;"><![endif]-->
 <table cellpadding="0" cellspacing="0" border="0" align="left" width="183" id="c183p33r"  style="float:left" class="c183p33r"><tr><td valign="top"  style="padding:0px"><table cellpadding="0" cellspacing="0" width="100%"><tr><td align="center"  style="padding:0px"><table cellpadding="0" cellspacing="0" border="0" align="center" class="full-width"><tr><td valign="top" align="center"  style="padding:10px"><table cellpadding="0" cellspacing="0" border="0" width="163" height="163"  style="border:0px none;height:auto" class="full-width"><tr><td valign="top"  style="padding:0px"><img
-src="https://donate.summerinthecity.com/assets/emailPic2.jpg" width="163" height="163" alt="" border="0"  style="display:block;width:100%;height:auto" class="full-width img163x163"  /></td>
+src="https://images.chamaileon.io/5c9ce0c65b0b3400da9509e5/30603845518_2778b9c650_z.jpg" width="163" height="163" alt="" border="0"  style="display:block;width:100%;height:auto" class="full-width img163x163"  /></td>
 </tr>
 </table>
 </td>
@@ -228,7 +229,7 @@ src="https://donate.summerinthecity.com/assets/emailPic2.jpg" width="163" height
 </table>
 <!--[if gte mso 9]></td><td valign="top" style="padding:0;"><![endif]-->
 <table cellpadding="0" cellspacing="0" border="0" align="left" width="183" id="c183p33r"  style="float:left" class="c183p33r"><tr><td valign="top"  style="padding:0px"><table cellpadding="0" cellspacing="0" width="100%"><tr><td align="center"  style="padding:0px"><table cellpadding="0" cellspacing="0" border="0" align="center" class="full-width"><tr><td valign="top" align="center"  style="padding:10px"><table cellpadding="0" cellspacing="0" border="0" width="163" height="163"  style="border:0px none;height:auto" class="full-width"><tr><td valign="top"  style="padding:0px"><img
-src="https://donate.summerinthecity.com/assets/emailPic3.jpg" width="163" height="163" alt="" border="0"  style="display:block;width:100%;height:auto" class="full-width img163x163"  /></td>
+src="https://images.chamaileon.io/5c9ce0c65b0b3400da9509e5/44113781271_92fc125b3f_z.jpg" width="163" height="163" alt="" border="0"  style="display:block;width:100%;height:auto" class="full-width img163x163"  /></td>
 </tr>
 </table>
 </td>
@@ -244,7 +245,7 @@ src="https://donate.summerinthecity.com/assets/emailPic3.jpg" width="163" height
 </tr>
 </table>
 <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td valign="top"  style="padding:0;mso-cellspacing:0in"><table cellpadding="0" cellspacing="0" border="0" align="left" width="183" id="c183p33r"  style="float:left" class="c183p33r"><tr><td valign="top"  style="padding:0px"><table cellpadding="0" cellspacing="0" width="100%"><tr><td align="center"  style="padding:0px"><table cellpadding="0" cellspacing="0" border="0" align="center" class="full-width"><tr><td valign="top" align="center"  style="padding:10px"><table cellpadding="0" cellspacing="0" border="0" width="163" height="163"  style="border:0px none;height:auto" class="full-width"><tr><td valign="top"  style="padding:0px"><img
-src="https://donate.summerinthecity.com/assets/emailPic4.jpg" width="163" height="163" alt="" border="0"  style="display:block;width:100%;height:auto" class="full-width img163x163"  /></td>
+src="https://images.chamaileon.io/5c9ce0c65b0b3400da9509e5/43206757455_584abdd5cd_z.jpg" width="163" height="163" alt="" border="0"  style="display:block;width:100%;height:auto" class="full-width img163x163"  /></td>
 </tr>
 </table>
 </td>
@@ -254,7 +255,7 @@ src="https://donate.summerinthecity.com/assets/emailPic4.jpg" width="163" height
 </tr>
 </table>
 <table cellpadding="0" cellspacing="0" width="100%"><tr><td align="center"  style="padding:0px"><table cellpadding="0" cellspacing="0" border="0" align="center" class="full-width"><tr><td valign="top" align="center"  style="padding:10px"><table cellpadding="0" cellspacing="0" border="0" width="163" height="163"  style="border:0px none;height:auto" class="full-width"><tr><td valign="top"  style="padding:0px"><img
-src="https://donate.summerinthecity.com/assets/emailPic5.jpg" width="163" height="163" alt="" border="0"  style="display:block;width:100%;height:auto" class="full-width img163x163"  /></td>
+src="https://images.chamaileon.io/5c9ce0c65b0b3400da9509e5/29175908167_15f5e96874_z.jpg" width="163" height="163" alt="" border="0"  style="display:block;width:100%;height:auto" class="full-width img163x163"  /></td>
 </tr>
 </table>
 </td>
@@ -268,7 +269,7 @@ src="https://donate.summerinthecity.com/assets/emailPic5.jpg" width="163" height
 </table>
 <!--[if gte mso 9]></td><td valign="top" style="padding:0;"><![endif]-->
 <table cellpadding="0" cellspacing="0" border="0" align="left" width="366" id="c366p66r"  style="float:left" class="c366p66r"><tr><td valign="top"  style="padding:0px"><table cellpadding="0" cellspacing="0" width="100%"><tr><td align="center"  style="padding:0px"><table cellpadding="0" cellspacing="0" border="0" align="center" class="full-width"><tr><td valign="top" align="center"  style="padding:10px"><table cellpadding="0" cellspacing="0" border="0" width="325" height="325"  style="border:0px none;height:auto" class="full-width"><tr><td valign="top"  style="padding:0px"><img
-src="https://donate.summerinthecity.com/assets/emailPic6.jpg" width="325" height="325" alt="" border="0"  style="display:block;width:100%;height:auto" class="full-width img325x325"  /></td>
+src="https://images.chamaileon.io/5c9ce0c65b0b3400da9509e5/43507902825_842687187f_z_2019-03-28P15.26.17.242.jpg" width="325" height="325" alt="" border="0"  style="display:block;width:100%;height:auto" class="full-width img325x325"  /></td>
 </tr>
 </table>
 </td>
@@ -325,6 +326,6 @@ style="padding: 0; margin: 0;text-align: center;">1655 Clark Street</p><p style=
   </table>
 </body>
 </html>
-EOT;
+EOF
 
 ?>

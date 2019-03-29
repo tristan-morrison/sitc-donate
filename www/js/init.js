@@ -110,9 +110,15 @@ paymentRequest.on('token', function(ev) {
   })
 })
 
+
+
 var paymentForm = document.getElementById('paymentForm');
 paymentForm.addEventListener('submit', function(event) {
   event.preventDefault();
+
+  var paymentAmount = document.getElementById('amount').value;
+  var donorEmail = document.getElementById('email').value;
+  var tributeEmail = document.getElementById('tribute_email').value;
 
   stripe.createToken(card).then(function(result) {
     if (result.error) {
@@ -131,9 +137,12 @@ paymentForm.addEventListener('submit', function(event) {
                   console.log(contentJson);
                   captureStripeCharge(chargeId).then(function (response) {
                     if (response.ok) {
-                      response.text().then(function (contentJson) {
-                        console.log(contentJson);
-                      })
+                      console.log("Success!");
+                      fetch (`./../server/sendDonorEmail.php?amount=${paymentAmount}&address=${donorEmail}`)
+                      if (tributeEmail) {
+                        fetch (`./../server/sendTributeEmail.php?address=${tributeEmail}`)
+                      }
+                      window.location.href = "./success"
                     }
                   })
                 })
