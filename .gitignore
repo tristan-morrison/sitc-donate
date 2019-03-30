@@ -3,3 +3,4 @@ www/.well-known/
 .DS_Store
 */.DS_Store
 www/server/phpmailer
+www/server/webmaster_password.php
