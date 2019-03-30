@@ -51,9 +51,9 @@ $mail->addReplyTo('hello@summerinthecity.com', 'Summer in the City');
 // $mail->addReplyTo('replyto@example.com', 'First Last');
 //Set who the message is to be sent to
 foreach ($directorEmails as $sendToEmail => $sendToName) {
-  $mail->addAddress($sendToEmail, $sendToName);
+  $mail->addBcc($sendToEmail, $sendToName);
 }
-// $mail->addAddress('ben@summerinthecity.com', 'Ben');
+$mail->addAddress($address);
 //Set the subject line
 $mail->Subject = "A donation in your honor";
 $message = $emailText;
