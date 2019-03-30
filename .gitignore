@@ -1,2 +1,5 @@
 stripe_api_key.php
 www/.well-known/
+.DS_Store
+*/.DS_Store
+www/server/phpmailer

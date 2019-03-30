@@ -66,6 +66,13 @@ prButton.on('click', function(ev) {
 
 paymentRequest.on('token', function(ev) {
 
+  document.getElementById('progressCircle').style.display = 'block';
+  document.getElementById('submitButton').style.display = 'none';
+
+  var paymentAmount = document.getElementById('amount').value;
+  var donorEmail = document.getElementById('email').value;
+  var tributeEmail = document.getElementById('tribute_email').value;
+
   var amount = (parseFloat(document.getElementById('amount').value) * 100) || 10000;
   var name = document.getElementById('first_name').value + " " + document.getElementById('last_name').value;
   console.log("name: " + name);
@@ -95,9 +102,12 @@ paymentRequest.on('token', function(ev) {
               console.log(contentJson);
               captureStripeCharge(chargeId).then(function (response) {
                 if (response.ok) {
-                  response.json().then(function (jsonContent) {
-                    console.log(jsonContent);
-                  })
+                  console.log("Success!");
+                  fetch (`./../server/sendDonorEmail.php?amount=${paymentAmount}&address=${donorEmail}`)
+                  if (tributeEmail) {
+                    fetch (`./../server/sendTributeEmail.php?address=${tributeEmail}`)
+                  }
+                  window.location.href = "./success"
                 }
               })
             })
