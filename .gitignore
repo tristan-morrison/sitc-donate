@@ -5,3 +5,4 @@ www/.well-known/
 www/server/phpmailer
 www/server/webmaster_password.php
 www/server/airtable_api_info.php
+www/js/stripe_api_key.js
