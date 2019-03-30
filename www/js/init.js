@@ -116,6 +116,11 @@ paymentRequest.on('token', function(ev) {
       })
     } else {
       ev.complete('fail')
+      response.json().then(function (responseJson) {
+        document.getElementById("card-errors").innerHTML = responseJson.message
+      })
+      document.getElementById("submitButton").style.display = "block";
+      document.getElementById("progressCircle").style.display = "none";
     }
   })
 })
