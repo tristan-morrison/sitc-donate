@@ -210,7 +210,7 @@ function submitDonationToAirtable (tokenId) {
     tributeLastName: document.getElementById('tribute_last_name').value,
     tributeEmail: document.getElementById('tribute_email').value,
     tributePhone: document.getElementById('tribute_phone').value,
-    amountPaid: parseInt(document.getElementById('amount')),
+    amountPaid: parseInt(document.getElementById('amount').value),
     paymentToken: tokenId
   }
 
