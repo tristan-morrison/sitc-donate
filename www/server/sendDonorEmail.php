@@ -43,7 +43,7 @@ $mail->SMTPAuth = true;
 //Username to use for SMTP authentication - use full email address for gmail
 $mail->Username = "webmaster@summerinthecity.com";
 //Password to use for SMTP authentication
-$mail->Password = "sitc+2-0*0/2";
+$mail->Password = "repair2016MapRoom";
 //Set who the message is to be sent from
 $mail->setFrom('webmaster@summerinthecity.com', 'Summer in the City');
 // //Set an alternative reply-to address
