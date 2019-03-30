@@ -7,7 +7,7 @@
   }); // end of document ready
 })(jQuery); // end of jQuery name space
 
-var stripe = Stripe('pk_test_MAi5X0RDzUYfCXELpoSOZ3nS');
+var stripe = Stripe(stripe_api_key);
 var elements = stripe.elements();
 
 var card = elements.create('card');
