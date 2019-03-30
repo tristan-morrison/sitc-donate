@@ -116,6 +116,9 @@ var paymentForm = document.getElementById('paymentForm');
 paymentForm.addEventListener('submit', function(event) {
   event.preventDefault();
 
+  document.getElementById('progressCircle').style.display = 'block';
+  document.getElementById('submitButton').style.display = 'none';
+
   var paymentAmount = document.getElementById('amount').value;
   var donorEmail = document.getElementById('email').value;
   var tributeEmail = document.getElementById('tribute_email').value;
