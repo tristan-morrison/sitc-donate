@@ -43,6 +43,7 @@
       "tributeLastName" => "Tribute Last Name",
       "tributeEmail" => "Tribute Email",
       "tributePhone" => "Tribute Phone",
+      "notes" => "Notes",
       "amountPaid" => "Amount Paid",
       "paymentToken" => "Stripe Payment Token"
     );
