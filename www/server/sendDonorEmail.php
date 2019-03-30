@@ -7,6 +7,7 @@
 date_default_timezone_set('Etc/UTC');
 require_once 'emailAddrs.php';
 require_once 'emailText.php';
+require_once 'webmaster_password.php';
 require_once 'phpmailer/src/PHPMailer.php';
 require 'phpmailer/src/SMTP.php';
 
@@ -43,7 +44,7 @@ $mail->SMTPAuth = true;
 //Username to use for SMTP authentication - use full email address for gmail
 $mail->Username = "webmaster@summerinthecity.com";
 //Password to use for SMTP authentication
-$mail->Password = "repair2016MapRoom";
+$mail->Password = $webmasterPassword;
 //Set who the message is to be sent from
 $mail->setFrom('webmaster@summerinthecity.com', 'Summer in the City');
 // //Set an alternative reply-to address
