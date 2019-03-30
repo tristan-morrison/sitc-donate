@@ -154,6 +154,11 @@ paymentForm.addEventListener('submit', function(event) {
           })
         } else {
           console.log('Charge error!');
+          response.json().then(function (responseJson) {
+            document.getElementById("card-errors").innerHTML = responseJson.message
+            document.getElementById("submitButton").style.display = "block";
+            document.getElementById("progressCircle").style.display = "none";
+          })
         }
       })
     }
