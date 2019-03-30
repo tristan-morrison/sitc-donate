@@ -46,6 +46,7 @@ $mail->Username = "webmaster@summerinthecity.com";
 $mail->Password = $webmasterPassword;
 //Set who the message is to be sent from
 $mail->setFrom('webmaster@summerinthecity.com', 'Summer in the City');
+$mail->addReplyTo('hello@summerinthecity.com', 'Summer in the City');
 // //Set an alternative reply-to address
 // $mail->addReplyTo('replyto@example.com', 'First Last');
 //Set who the message is to be sent to
