@@ -1,8 +1,8 @@
 stripe_api_key.php
-www/.well-known/
+public_html/.well-known/
 .DS_Store
 */.DS_Store
-www/server/phpmailer
-www/server/webmaster_password.php
-www/server/airtable_api_info.php
-www/js/stripe_api_key.js
+public_html/server/phpmailer
+public_html/server/webmaster_password.php
+public_html/server/airtable_api_info.php
+public_html/js/stripe_api_key.js
