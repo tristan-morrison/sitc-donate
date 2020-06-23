@@ -7,6 +7,8 @@
   }); // end of document ready
 })(jQuery); // end of jQuery name space
 
+// testing for a git issue. DELETE ME
+
 var stripe = Stripe(stripe_api_key);
 var elements = stripe.elements();
 
